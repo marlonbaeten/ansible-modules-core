@@ -247,7 +247,7 @@ def main():
             if not module.check_mode:
                 if prev_state == 'directory':
                     try:
-                        shutil.rmtree(path, ignore_errors=False)
+                        shutil.rmtree(path, ignore_errors=force)
                     except Exception, e:
                         module.fail_json(msg="rmtree failed: %s" % str(e))
                 else:
